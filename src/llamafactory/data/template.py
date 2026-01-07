@@ -21,7 +21,7 @@ from typing_extensions import override
 
 from ..extras import logging
 from .data_utils import Role
-from .formatter import EmptyFormatter, FunctionFormatter, StringFormatter, ToolFormatter
+from .formatter import DNAFormatter, EmptyFormatter, FunctionFormatter, StringFormatter, ToolFormatter
 from .mm_plugin import get_mm_plugin
 
 
@@ -1084,6 +1084,24 @@ register_template(
     template_class=Llama2Template,
 )
 
+
+register_template(
+    name="generator",
+    format_user=DNAFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
+    format_assistant=DNAFormatter(slots=["{{content}}</s>"]),
+    format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
+    stop_words=["</s>"],
+    efficient_eos=True,
+)
+
+register_template(
+    name="hybridna",
+    format_user=DNAFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
+    format_assistant=DNAFormatter(slots=["{{content}}"]),
+    format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
+    stop_words=["</s>"],
+    efficient_eos=True,
+)
 
 register_template(
     name="glm4",

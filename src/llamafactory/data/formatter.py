@@ -141,6 +141,17 @@ class FunctionFormatter(StringFormatter):
 
 
 @dataclass
+class DNAFormatter(StringFormatter):
+    @override
+    def apply(self, **kwargs) -> SLOTS:
+        content: str = kwargs.get("content", "")
+        content = content.strip()
+        padding = "A" * ((6 - len(content) % 6) % 6)
+        kwargs["content"] = padding + content
+        return super().apply(**kwargs)
+
+
+@dataclass
 class ToolFormatter(Formatter):
     def __post_init__(self):
         self.tool_utils = get_tool_utils(self.tool_format)
