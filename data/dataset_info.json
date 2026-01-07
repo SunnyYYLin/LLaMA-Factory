@@ -1,5 +1,5 @@
 {
-  "abc_train": {
+  "abc_k562_train": {
     "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-K562/train.json",
     "ranking": true,
     "columns": {
@@ -8,7 +8,7 @@
       "rejected": "rejected"
     }
   },
-  "abc_val": {
+  "abc_k562_val": {
     "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-K562/val.json",
     "ranking": true,
     "columns": {

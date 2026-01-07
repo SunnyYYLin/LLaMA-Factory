@@ -4,8 +4,9 @@ from random import sample
 import heapq
 
 import numpy as np
-from datasets import load_dataset, Dataset, DatasetDict
+from datasets import load_dataset, load_from_disk, Dataset, DatasetDict
 import pandas as pd
+from llamafactory import data
 from tap import Tap
 
 """ABC-preferences Dataset Example:
@@ -103,7 +104,11 @@ if __name__ == "__main__":
         args.output_dir = Path(getenv('DATASETS', '')) / 'lf' / args.dataset_dir.name
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
-    dataset = load_dataset(str(args.dataset_dir))
+    try:
+        dataset = load_dataset(str(args.dataset_dir))
+    except Exception as e:
+        dataset = load_from_disk(args.dataset_dir)
+
     assert isinstance(dataset, DatasetDict), f"Expected a DatasetDict, but got {type(dataset)}"
 
     def process_batch(batch, min_diff, max_num):

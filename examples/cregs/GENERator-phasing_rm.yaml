@@ -9,7 +9,7 @@ finetuning_type: full
 deepspeed: examples/deepspeed/ds_z2_offload_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
 
 ### dataset
-dataset: abc_train
+dataset: abc_k562_train
 template: generator
 cutoff_len: 8192
 max_samples: 1000000
@@ -37,7 +37,7 @@ ddp_timeout: 180000000
 resume_from_checkpoint: null
 
 ## eval
-eval_dataset: abc_val
+eval_dataset: abc_k562_val
 per_device_eval_batch_size: 16
 eval_strategy: steps
 eval_steps: 100
