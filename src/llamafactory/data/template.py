@@ -1088,7 +1088,7 @@ register_template(
 register_template(
     name="generator",
     format_user=DNAFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
-    format_assistant=DNAFormatter(slots=["{{content}}</s>"]),
+    format_assistant=DNAFormatter(slots=["{{content}}"]),
     format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
     stop_words=["</s>"],
     efficient_eos=True,
