@@ -17,6 +17,42 @@
       "rejected": "rejected"
     }
   },
+  "abc_k562_test": {
+    "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-K562/test.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "gene_seq",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "abc_liver_train": {
+    "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-liver/train.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "gene_seq",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "abc_liver_val": {
+    "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-liver/val.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "gene_seq",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "abc_liver_test": {
+    "file_name": "/home/dataset-assist-0/datasets/lf/ABC-preferences-liver/test.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "gene_seq",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },

@@ -97,7 +97,7 @@ if __name__ == "__main__":
         dataset_dir: Path = Path('SunnyLin/ABC-preferences-K562')
         sample_rate: float = 1.0
         output_dir: Path|None = None
-        max_num: int = 32
+        max_num: int = 16
         min_diff: float = 0.1
     args = Args().parse_args()
     if not args.output_dir:

@@ -1087,8 +1087,8 @@ register_template(
 
 register_template(
     name="generator",
-    format_user=DNAFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
-    format_assistant=DNAFormatter(slots=["{{content}}"]),
+    format_user=StringFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
+    format_assistant=StringFormatter(slots=["{{content}}"]),
     format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
     stop_words=["</s>"],
     efficient_eos=True,
@@ -1096,10 +1096,10 @@ register_template(
 
 register_template(
     name="hybridna",
-    format_user=DNAFormatter(slots=["<bog>{{content}}</s><bok><s>"]),
+    format_user=DNAFormatter(slots=["[BOS]{{content}}[SEP][CLS]"]),
     format_assistant=DNAFormatter(slots=["{{content}}"]),
     format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
-    stop_words=["</s>"],
+    stop_words=["[SEP]"],
     efficient_eos=True,
 )
 
